@@ -1,6 +1,9 @@
 ## pagelet-example - scrat pagelet 示例
 
   - 源码地址: https://github.com/scrat-team/pagelet-example
+  - 模板引擎扩展:
+    - https://github.com/scrat-team/scrat-swig
+    - https://github.com/scrat-team/nunjucks-pagelet
 
 ### 初始化
   - 安装工具: `npm install scrat -g`
