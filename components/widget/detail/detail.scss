@@ -1,0 +1,308 @@
+@charset "UTF-8";
+@import "components/widget/shared-style/shared-style";
+
+/**
+* ::::::::::::::detail::::::::::::::
+*/
+h1{
+  font-size:22px;
+  padding: 15px 10px 10px;
+  line-height:30px;
+  word-break:break-all;
+}
+
+/**
+* 纯图片和纯文本，需要在顶部加间距
+*/
+.detail-text,
+.detail-photo {
+  padding-top: 20px;
+}
+
+.detail-text,
+.detail-photo,
+.detail-photos,
+.detail-news{
+  background-color: #FFFFFF;
+  @extend %onePxBottom;
+  border-bottom: 12px solid #F4F2F0;
+}
+//分享
+.control{
+  height: 90px;
+  margin: 0 5px;
+  .title{
+    height: 39px;
+    line-height: 39px;
+    text-align: center;
+    position: relative;
+    .text{
+      display: inline-block;
+      background-color: #FFF;
+      padding:0 5px;
+      position: relative;
+      z-index: 2;
+      color: #999;
+    }
+    &::before{
+      @include blockContent;
+      height:1px;
+      position: absolute;
+      left: 5px;
+      top: 20px;
+      right: 5px;
+      @include titlePx;
+      z-index: 1;
+    }
+  }
+  .btns{
+    display: -webkit-box;
+    li{
+      -webkit-box-flex: 1;
+      width: 100%;
+      height: 34px;
+      border: 1px solid #595959;
+      @include borderRadius(4px);
+      display: -webkit-box;-webkit-box-pack: center;-webkit-box-align: center;
+      margin: 0 5px;
+    }
+    .count{
+      color: #999;
+      display: inline-block;
+      padding-left: 3px;
+    }
+    .btn-zan::before,
+    .btn-share::before{
+      @include blockContent;
+      width: 20px;
+      height: 20px;
+      @include detailIcon;
+
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+      margin-right: 8px;
+    }
+    .btn-share::before{
+      background-position: 0 -20px;
+    }
+    .btn-zan.press::before{ background-position: 0 -40px;}
+    .btn-share.press{ background-color: #EBEBEB;}
+  }
+}
+//相关推荐
+.mod-rec{
+  background-color: #FFFFFF;
+  @extend %onePxTop;
+  .hd{
+    height:30px;
+    padding-left: 23px;
+    font-size: 16px;
+    overflow: hidden;
+    line-height: 42px;
+    position:relative;
+    .text{
+      display: inline-block;
+      background-color: #FFF;
+      padding-right: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    &::after{
+      display: block;
+      content: "";
+      width: 4px;
+      height: 15px;
+      background-color: #FB7217;
+      position: absolute;
+      left: 10px;
+      top: 14px;
+    }
+    &::before{
+      @include blockContent;
+      height:1px;
+      position: absolute;
+      left: 25px;
+      top: 21px;
+      right: 10px;
+      @include titlePx;
+      z-index: 1;
+    }
+  }
+}
+//公用详情-第一块
+.detail-content{
+  .head{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    padding: 10px 10px 5px;
+  }
+  .content{
+    margin: 4px 10px 9px;
+    font-size: 18px;
+    line-height: 28px;
+    word-break:break-all;
+    p {
+      margin:0 0 21px 0;
+    }
+    img {
+      display: block;
+      max-width: 720px!important;
+      width: 100% !important;
+      height: auto !important;
+      margin: 0 auto;
+    }
+  }
+  .pic{
+    margin: 10px;
+    text-align: center;
+    img{
+      margin: 0 auto;
+      display: block;
+      max-width: 300px;
+    }
+  }
+  .info{
+    font-size: 12px;
+    color: #999;
+    margin: 0 10px 20px;
+    .time{
+      display: inline-block;
+      padding-left: 15px;
+    }
+    .from{
+      display: inline-block;
+      padding-left: 15px;
+    }
+  }
+}
+//公用详情-第二块
+.module-text,
+.module-photo,
+.module-photos,
+.module-gif,
+.module-news{
+  @extend %onePxBottom;
+  padding: 10px;
+  position: relative;
+  .info{
+    margin: 0;
+    padding-top: 4px;
+  }
+}
+//推荐-纯文本
+.module-text{
+  .name{
+    @include textOverflowMore(16px,20px,3);
+  }
+}
+//推荐-图文
+//图片类详情
+.module-photo,
+.module-photos,
+.module-gif,
+.module-news{
+  .name{
+    @include textOverflowMore(16px,20px,2);
+    margin-bottom: 10px;
+  }
+}
+//推荐-图文-大图
+.module-photo{
+  .pic{
+    margin: 0;
+    position: relative;
+    img{
+      width: 100%;
+    }
+  }
+  .info{
+    padding-top: 10px;
+  }
+}
+//推荐-图文-gif
+.module-gif{
+  .pic{
+    margin: 0;
+    position: relative;
+    @include boxCenter;
+
+    img{
+      width: 100%;
+    }
+    &::after{
+      @include blockContent;
+      width: 52px;
+      height: 52px;
+      @include gifIcon;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -26px 0 0 -26px;
+    }
+    &.playing::after {
+      background-image: none ;
+    }
+  }
+  .info{
+    padding-top: 10px;
+  }
+}
+//推荐-图文-三列图
+.module-photos{
+  padding: 10px 0;
+  .name{ padding-left: 10px;}
+  .photo-list{
+    display: -webkit-box;
+    margin-left: 10px;
+    li{
+      -webkit-box-flex: 1;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+      padding-right: 10px;
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .pic{
+    margin: 0;
+    width:100%;
+    overflow: hidden;
+    @extend %defaultPic;
+  }
+
+  .time{
+    font-size: 12px;
+    color: #999;
+    padding-top: 8px;
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+//推荐-图文-新闻类
+.module-news{
+  padding: 0;
+  a{
+    display: -webkit-box;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+  }
+  .pic{
+    margin: 0;
+    width:75px;
+    height: 57px;
+    @extend %defaultPic;
+  }
+  .con{
+    -webkit-box-flex: 1;
+    -webkit-box-sizing: border-box;
+    padding-left: 10px;
+
+  }
+  .name{
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,42 @@
+@import "/components/widget/shared-style/shared-style";
+img.laod-error {
+  display: none !important;
+}
+
+.card-news{
+
+  padding: 15px 0 5px 18px;
+  a{
+    display: -webkit-box;
+    position: relative;
+    z-index: 1;
+  }
+  .pic{
+    -webkit-box-flex: 2;
+    @extend %defaultPic;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    border-right: 2px solid #FFF;
+    border-bottom: 10px solid #FFF;
+    min-height: 70px;
+    img{
+      width: 100%;
+      height: 73px;
+      display: block;
+    }
+  }
+  .con{
+    width: 100%;
+    -webkit-box-flex: 1;
+    padding-left: 8px;
+    -webkit-box-sizing: border-box;
+
+  }
+  .name{
+    padding-right: 10px;
+    height: 50px;
+    margin: -4px 0;
+    @include textOverflowMore(18px,25px,2);
+  }
+
+}

@@ -1,0 +1,94 @@
+@charset "UTF-8";
+//继承 默认图片
+%defaultPic{
+    background-color: #FAF5F2;
+    background-image: url(images/default_pic.png);
+    -webkit-background-size: 57px 57px;
+    background-size: 57px 57px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+//一像素线
+%onePxBottom{
+    background-image:url(images/border-b.png);
+    -webkit-background-size: 2px 2px;
+    background-size: 2px 2px;
+    background-repeat: repeat-x;
+    background-position: 0 bottom;
+}
+%onePxTop{
+    background-image:url(images/border-t.png);
+    -webkit-background-size: 2px 2px;
+    background-size: 2px 2px;
+    background-repeat: repeat-x;
+    background-position: 0 top;
+}
+//
+%tipClosePic{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(images/tips_close.png);
+    -webkit-background-size: 8px 8px;
+    background-size: 8px 8px;
+}
+
+//标题像素线
+@mixin titlePx{
+    background-image:url(images/detail_line.png);
+    -webkit-background-size: 2px 2px;
+    background-size: 2px 2px;
+    background-repeat: repeat-x;
+    background-position: 0 top;
+}
+//公用图标
+@mixin detailIcon{
+    background-image:url(images/newsdetail_icon.png);
+    -webkit-background-size: 20px auto;
+    background-size: 20px auto;
+}
+//gif图标
+@mixin gifIcon{
+    background-image: url(images/icon_gif.png);
+    -webkit-background-size:52px auto;
+    background-size:52px auto;
+}
+//关闭图标
+@mixin closeIcon{
+    background-image: url(images/item_close.png);
+    background-size: 8px 8px;
+    -webkit-background-size: 8px 8px;
+    background-position: 24px center;
+    background-repeat: no-repeat;
+}
+//关闭图标
+@mixin viewIcon{
+    background-image: url(images/bg_view.png);
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-size:17px auto;
+}
+//多行裁切
+@mixin textOverflowMore($fSize,$lHeight,$line){
+    font-size: $fSize;
+    line-height:$lHeight;
+    max-height:$line*$lHeight;
+    overflow:hidden;text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: $line; -webkit-box-orient: vertical;
+}
+//单行裁切
+@mixin textOverflow{
+    overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+}
+//圆角
+@mixin borderRadius($num){
+    -weibkit-border-radius:$num;
+    border-radius:$num;
+}
+//盒子垂直水平居中
+@mixin boxCenter{
+    display: -webkit-box;-webkit-box-pack: center;-webkit-box-align: center;
+}
+//伪元素
+@mixin blockContent{
+    display: block;
+    content: "";
+}

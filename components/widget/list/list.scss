@@ -1,0 +1,67 @@
+@charset "UTF-8";
+@import "components/widget/shared-style/shared-style";
+
+/**
+* ::::::::::::::list::::::::::::::
+*/
+.p-list{
+  /*height: 100%;*/
+  background: #F4F2F0;
+  .card{
+    @extend %onePxBottom;
+    background-color: #fff;
+    margin-bottom: 10px;
+  }
+  .item-sign{
+    display: -webkit-box;
+    height: 36px;
+    padding-top: 5px;
+
+  }
+  .info{
+    -webkit-box-flex: 1;
+
+    @include textOverflow;
+    font-size: 12px;
+    color: #999;
+    line-height: 30px;
+    .sort{
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
+  .close{
+    display: block;
+    width: 50px;
+    height: 30px;
+    @include closeIcon;
+    position: relative;
+    z-index: 5;
+    .close-tips{
+      display: none;
+      width: 48px;
+      height: 24px;
+      background-color: rgba(0,0,0,.75);
+      @include borderRadius(3px);
+      position: absolute;
+      left: -25px;
+      top: 2px;
+      color: #FFF;
+      font-size: 10px;
+      text-align: center;
+      line-height: 24px;
+      outline: none;
+      &::after{
+        @include blockContent;
+        width:0;
+        height:0;
+        border-top:3px solid transparent;
+        border-bottom:3px solid transparent;
+        border-left:3px solid #404040;
+        position: absolute;
+        right: -3px;
+        top: 9px;
+      }
+    }
+  }
+}
