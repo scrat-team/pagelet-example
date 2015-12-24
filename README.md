@@ -19,6 +19,11 @@
       - 可以看到切换页面时的内容替换, 观察指定的 data-pagelet 区域
       - 演示代码仅为替换两个区域, 实际业务可以需求选择前插/后插/替换/自定义
    - 或者观看截图: https://github.com/scrat-team/pagelet-example/tree/master/docs
+     - ![静态资源引入-element.png](https://github.com/scrat-team/pagelet-example/raw/master/docs/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%BC%95%E5%85%A5-element.png)
+     - ![静态资源引入-network.png](https://github.com/scrat-team/pagelet-example/raw/master/docs/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%BC%95%E5%85%A5-network.png)
+     - ![pagelet切换1.png](https://github.com/scrat-team/pagelet-example/raw/master/docs/pagelet%E5%88%87%E6%8D%A2.png)
+     - ![pagelet切换2.png](https://github.com/scrat-team/pagelet-example/raw/master/docs/pagelet%E5%88%87%E6%8D%A22.png)
+     - ![pagelet切换3.png](https://github.com/scrat-team/pagelet-example/raw/master/docs/pagelet%E5%88%87%E6%8D%A23.png)
 
 ### 常用指令
   - 开发: `scrat release -cwL` (`-c`代表清理compile缓存, 避免踩坑.)
